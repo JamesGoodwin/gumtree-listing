@@ -1,8 +1,10 @@
-package com.github.jgoodwin.viewitem.domain;
+package com.github.jgoodwin.listing.domain;
+
+import android.net.Uri;
 
 import java.io.Serializable;
 
-public class ItemContactDetails implements Serializable {
+public class ContactDetails implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -10,22 +12,34 @@ public class ItemContactDetails implements Serializable {
     private final String sms;
     private final String email;
 
-    public ItemContactDetails(String telephone, String sms, String email) {
+    public ContactDetails(String telephone, String sms, String email) {
         this.telephone = telephone;
         this.sms = sms;
         this.email = email;
     }
 
-    public String getTelephone() {
+    public String telephone() {
         return telephone;
     }
-
-    public String getSms() {
-        return sms;
+    
+    public Uri callTelephoneUri() {
+        return Uri.parse("tel:" + telephone());
     }
 
-    public String getEmail() {
+    public String sms() {
+        return sms;
+    }
+    
+    public Uri sendSmsUri() {
+        return Uri.parse("smsto:" + telephone());
+    }
+
+    public String email() {
         return email;
+    }
+
+    public Uri sendEmailUri() {
+        return Uri.parse("mailto:" + email());
     }
     
     public boolean hasEmail() {
@@ -39,4 +53,5 @@ public class ItemContactDetails implements Serializable {
     public boolean hasTelephone() {
         return telephone != null && telephone.length() > 0;
     }
+
 }
