@@ -11,6 +11,8 @@ import com.github.jgoodwin.viewitem.R;
 
 public class ContactButtonsFragment extends Fragment {
 
+    public static final String CONTACT_DETAILS_KEY = "contactDetails";
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_contact_buttons, container, false);

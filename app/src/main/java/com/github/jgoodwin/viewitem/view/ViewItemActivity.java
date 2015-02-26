@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.jgoodwin.viewitem.R;
+import com.github.jgoodwin.viewitem.domain.ItemContactDetails;
 
 public class ViewItemActivity extends ActionBarActivity {
 
@@ -14,14 +15,9 @@ public class ViewItemActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_item);
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new ImageGalleryFragment())
-                    .add(R.id.container, new ViewItemDescriptionFragment())
-                    .add(R.id.container, new ContactButtonsFragment())
-                    .commit();
+            createFragments();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,5 +30,28 @@ public class ViewItemActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void createFragments() {
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.content_container, new ImageGalleryFragment())
+                .add(R.id.content_container, new ViewItemDescriptionFragment())
+                .add(R.id.overlay_container, createContactButtonsFragment())
+                .commit();
+    }
+
+    private ContactButtonsFragment createContactButtonsFragment() {
+        ContactButtonsFragment contactButtonsFragment = new ContactButtonsFragment();
+        Bundle arguments = new Bundle();
+
+        ItemContactDetails itemContactDetails = new ItemContactDetails("02012345678",
+                "07701234567",
+                "item.forsale@domain.com");
+        
+        arguments.putSerializable(ContactButtonsFragment.CONTACT_DETAILS_KEY, itemContactDetails);
+        contactButtonsFragment.setArguments(arguments);
+        
+        return contactButtonsFragment;
+    }
+
 
 }
