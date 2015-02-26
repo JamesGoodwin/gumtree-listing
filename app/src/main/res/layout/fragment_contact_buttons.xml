@@ -1,24 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:background="@color/transparent_black_50_percent"
-    android:layout_gravity="center|top"
-    android:baselineAligned="false"
-    android:padding="@dimen/activity_horizontal_margin"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    style="@style/call_to_action_background"
+    android:padding="@dimen/small_margin">
+
+    <TextView
+        android:id="@+id/posting_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textStyle="bold"
+        tools:text="@string/tools_posting_user"/>
     
-    <Button
-        style="@style/call_to_action_button"
-        android:text="@string/call"
-        android:textAllCaps="true"/>
+    <TextView
+        android:gravity="right"
+        android:id="@+id/posting_since"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:layout_toRightOf="@id/posting_user"
+        android:layout_alignParentRight="true"
+        tools:text="@string/tools_posting_since" />
 
-    <Button
-        style="@style/call_to_action_button"
-        android:text="@string/sms"
-        android:textAllCaps="true" />
+    <LinearLayout
+        android:layout_below="@id/posting_user"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:baselineAligned="false"
+        android:padding="@dimen/medium_margin">
 
-    <Button
-        style="@style/call_to_action_button"
-        android:text="@string/email"/>
+        <Button
+            android:id="@+id/call_button"
+            style="@style/call_to_action_button"
+            android:text="@string/call" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/sms_button"
+            style="@style/call_to_action_button"
+            android:text="@string/sms" />
+
+        <Button
+            android:id="@+id/email_button"
+            style="@style/call_to_action_button"
+            android:text="@string/email" />
+
+    </LinearLayout>
+
+</RelativeLayout>

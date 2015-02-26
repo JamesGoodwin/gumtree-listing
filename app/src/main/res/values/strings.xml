@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ViewItem</string>
+    <string name="app_name">Gumtree</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="placeholder_1">Image gallery fragment here</string>
     <string name="call">Call</string>
     <string name="sms">SMS</string>
     <string name="email">Email</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="tools_posting_user">John Smith</string>
+    <string name="tools_posting_since">Posting for 2+ years</string>
 
 </resources>

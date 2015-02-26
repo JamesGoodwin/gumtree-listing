@@ -3,6 +3,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent_black_50_percent">#3F000000</color>
     <color name="gumtree_green">#FF95C858</color>
+    <color name="gumtree_dark_green">#FF6FA544</color>
     <color name="gumtree_orange">#FFF4731E</color>
     <color name="gumtree_dark_orange">#FFDF531B</color>
 </resources>

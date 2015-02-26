@@ -3,6 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/gumtree_green</item>
+        <item name="colorPrimaryDark">@color/gumtree_dark_green</item>
     </style>
 
     <style name="orange_button">
@@ -11,11 +12,14 @@
     </style>
     
     <style name="call_to_action_button" parent="orange_button">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_margin">@dimen/small_margin</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+    
+    <style name="call_to_action_background">
+        <item name="android:background">@color/transparent_black_50_percent</item>
     </style>
 
 </resources>

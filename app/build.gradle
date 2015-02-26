@@ -5,13 +5,23 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.github.jgoodwin.viewitem"
+        applicationId "com.github.jgoodwin.itemdescription"
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
-    
+
+    // Fix for build errors when including RoboGuice
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+
+    }
     
     buildTypes {
         release {
@@ -24,4 +34,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.squareup.picasso:picasso:2.2.0'
 }
