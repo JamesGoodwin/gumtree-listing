@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.github.jgoodwin.viewitem.R;
 
-public class ViewItemDescriptionFragment extends Fragment {
+public class ItemDescriptionTextFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

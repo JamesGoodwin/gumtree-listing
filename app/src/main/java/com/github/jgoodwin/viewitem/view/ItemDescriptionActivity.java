@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.github.jgoodwin.viewitem.R;
 import com.github.jgoodwin.viewitem.domain.ItemContactDetails;
 
-public class ViewItemActivity extends ActionBarActivity {
+public class ItemDescriptionActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class ViewItemActivity extends ActionBarActivity {
     private void createFragments() {
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.content_container, new ImageGalleryFragment())
-                .add(R.id.content_container, new ViewItemDescriptionFragment())
+                .add(R.id.content_container, new ItemDescriptionTextFragment())
                 .add(R.id.overlay_container, createContactButtonsFragment())
                 .commit();
     }
