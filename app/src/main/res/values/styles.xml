@@ -2,7 +2,20 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/gumtree_green</item>
+    </style>
+
+    <style name="orange_button">
+        <item name="android:background">@color/gumtree_orange</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    
+    <style name="call_to_action_button" parent="orange_button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">@dimen/small_margin</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>

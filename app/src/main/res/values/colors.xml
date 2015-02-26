@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent_black_50_percent">#3F000000</color>
+    <color name="gumtree_green">#FF95C858</color>
+    <color name="gumtree_orange">#FFF4731E</color>
+    <color name="gumtree_dark_orange">#FFDF531B</color>
+</resources>

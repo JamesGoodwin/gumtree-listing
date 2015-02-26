@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="fill_parent"
+    android:background="@color/transparent_black_50_percent"
+    android:layout_gravity="center|top"
+    android:baselineAligned="false"
+    android:padding="@dimen/activity_horizontal_margin"
     android:layout_height="match_parent">
+    
+    <Button
+        style="@style/call_to_action_button"
+        android:text="@string/call"
+        android:textAllCaps="true"/>
+
+    <Button
+        style="@style/call_to_action_button"
+        android:text="@string/sms"
+        android:textAllCaps="true" />
+
+    <Button
+        style="@style/call_to_action_button"
+        android:text="@string/email"/>
 
 </LinearLayout>
