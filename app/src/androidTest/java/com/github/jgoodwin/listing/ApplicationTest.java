@@ -1,4 +1,4 @@
-package com.github.jgoodwin.viewitem;
+package com.github.jgoodwin.listing;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
