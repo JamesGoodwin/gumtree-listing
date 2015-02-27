@@ -12,5 +12,11 @@
     <string name="save">Save</string>
     <string name="tools_posting_user">John Smith</string>
     <string name="tools_posting_since">Posting for 2+ years</string>
+    <string name="tools_title">Title</string>
+    <string name="tools_location">123 The Street, The Town, Somewhere</string>
+    <string name="tools_price">£125,000</string>
+    <string name="date_posted">Date posted</string>
+    <string name="tools_description">Description of listing</string>
+    <string name="tools_adref">Ad ref: 12345</string>
 
 </resources>
