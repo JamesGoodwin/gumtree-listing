@@ -20,6 +20,9 @@ public class ListingDescriptionFragment extends Fragment {
     
     private Listing listing;
 
+    @InjectView(R.id.title_text)
+    TextView titleText;
+    
     @InjectView(R.id.description_text)
     TextView descriptionText;
 
@@ -58,6 +61,8 @@ public class ListingDescriptionFragment extends Fragment {
     }
 
     private void initialiseText() {   
+        titleText.setText(listing.title());
+        
         descriptionText.setText(listing.description());
         
         locationText.setText(listing.location());

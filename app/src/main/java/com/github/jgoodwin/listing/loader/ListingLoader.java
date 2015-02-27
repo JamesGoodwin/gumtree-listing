@@ -22,10 +22,10 @@ public class ListingLoader extends Loader<Listing> {
         ArrayList<String> images = images();
         Listing listing = new Listing(12345L,
                 "http://www.gumtree.com/p/other-outdoor-toys/feber-ferrari-f430-6v-battery-operated-ride-in-car-used-in-good-condion/1099393342",
-                "Ferrari",
+                "2014 Ferrari 458 Rosso",
                 125000,
-                "Rosso Corsa, with Nero Leather Interior, Nero Dashboard and Carpets, Rosso Stitching, 20” Diamond Finish Alloy Wheels",
-                "Knightsbridge",
+                "Rosso with Nero Leather Interior, Nero Dashboard and Carpets, Rosso Stitching, 20” Diamond Finish Alloy Wheels",
+                "Tonbridge, Kent",
                 images, new Date(), listingUser(),
                 contactDetails());
         
