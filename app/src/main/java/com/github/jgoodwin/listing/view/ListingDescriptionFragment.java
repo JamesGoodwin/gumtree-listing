@@ -17,10 +17,20 @@ import butterknife.InjectView;
 public class ListingDescriptionFragment extends Fragment {
 
     public static final String LISTING_KEY = "listing";
+    
     private Listing listing;
 
     @InjectView(R.id.description_text)
     TextView descriptionText;
+
+    @InjectView(R.id.price_text)
+    TextView priceText;
+
+    @InjectView(R.id.location_text)
+    TextView locationText;
+    
+    @InjectView(R.id.ad_ref_text)
+    TextView adRefText;
     
     @Override
     public View onCreateView(LayoutInflater inflater,
@@ -44,10 +54,16 @@ public class ListingDescriptionFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initialiseDescriptionText();
+        initialiseText();
     }
 
-    private void initialiseDescriptionText() {
+    private void initialiseText() {   
         descriptionText.setText(listing.description());
+        
+        locationText.setText(listing.location());
+        
+        adRefText.setText(String.format("Ad ref %d", listing.id()));
+        
+        priceText.setText("£" + listing.price());
     }
 }

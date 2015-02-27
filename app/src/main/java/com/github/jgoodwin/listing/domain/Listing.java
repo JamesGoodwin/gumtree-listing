@@ -80,4 +80,8 @@ public class Listing implements Serializable {
     public Date datePosted() {
         return datePosted;
     }
+
+    public long id() {
+        return id;
+    }
 }
