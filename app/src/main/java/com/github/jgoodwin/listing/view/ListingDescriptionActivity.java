@@ -19,13 +19,25 @@ import butterknife.ButterKnife;
 
 public class ListingDescriptionActivity extends ActionBarActivity implements LoaderManager.LoaderCallbacks<Listing> {
 
+    private static final String FRAGMENTS_CREATED_KEY = "fragmentsCreated";
+    
     private Listing listing;
+    
+    private ImageGalleryFragment imageGalleryFragment;
+    private ListingDescriptionFragment descriptionFragment;
+    private ContactButtonsFragment contactButtonsFragment;
+    
+    private boolean fragmentsCreated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_listing_description);
+        
+        if(savedInstanceState != null) {
+            fragmentsCreated = savedInstanceState.getBoolean(FRAGMENTS_CREATED_KEY);
+        }
 
         getLoaderManager().initLoader(ListingDescriptionActivity.class.hashCode(), null, this);
 
@@ -44,19 +56,33 @@ public class ListingDescriptionActivity extends ActionBarActivity implements Loa
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(FRAGMENTS_CREATED_KEY, fragmentsCreated);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
 
-    private void createFragments() {
-        getFragmentManager().beginTransaction()
-                .replace(R.id.gallery_container, createImageGalleryFragment())
-                .replace(R.id.content_container, createItemDescriptionFragment())
-                .replace(R.id.contact_buttons_container, createContactButtonsFragment())
-                .commit();
+    private void initialiseFragments() {
+        // prevent loader from triggering fragments recreating on orientation change
+        if(!fragmentsCreated) {           
+            this.imageGalleryFragment = createImageGalleryFragment();
+            this.descriptionFragment = createListingDescriptionFragment();
+            this.contactButtonsFragment = createContactButtonsFragment();
+
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.gallery_container, imageGalleryFragment)
+                    .replace(R.id.content_container, descriptionFragment)
+                    .replace(R.id.contact_buttons_container, contactButtonsFragment)
+                    .commit();
+            fragmentsCreated = true;
+        }
     }
 
-    private ListingDescriptionFragment createItemDescriptionFragment() {
+    private ListingDescriptionFragment createListingDescriptionFragment() {
         ListingDescriptionFragment descriptionTextFragment = new ListingDescriptionFragment();
         Bundle arguments = new Bundle();
         arguments.putSerializable(ListingDescriptionFragment.LISTING_KEY, listing);
@@ -106,7 +132,7 @@ public class ListingDescriptionActivity extends ActionBarActivity implements Loa
             @Override
             public void run() {
                 setTitle(listing.title());
-                createFragments();
+                initialiseFragments();
             }
         });
     }
