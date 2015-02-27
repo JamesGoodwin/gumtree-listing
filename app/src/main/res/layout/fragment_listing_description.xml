@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         tools:text="@string/tools_title" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -28,10 +28,9 @@
             style="@style/large_grey_text"
             android:layout_alignBaseline="@id/location_text"
             android:layout_alignParentRight="true"
-            android:gravity="right"
             tools:text="@string/tools_price" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/date_posted_container"
