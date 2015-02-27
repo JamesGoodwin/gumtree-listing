@@ -8,24 +8,22 @@
 
     <TextView
         android:id="@+id/posting_user"
-        android:layout_alignParentLeft="true"
         tools:text="@string/tools_posting_user"
         style="@style/black_bold_text" />
-    
+
     <TextView
         android:gravity="end"
         android:id="@+id/posting_since"
-        android:layout_toRightOf="@id/posting_user"
-        android:layout_alignParentRight="true"
-        android:layout_alignBaseline="@id/posting_user"
+        android:layout_below="@id/posting_user"
         tools:text="@string/tools_posting_since"
         style="@style/black_italic_text" />
 
     <LinearLayout
-        android:layout_below="@id/posting_user"
+        android:layout_toRightOf="@id/posting_since"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
+        android:layout_marginLeft="64dp"
         android:paddingTop="@dimen/small_margin"
         android:baselineAligned="false">
 

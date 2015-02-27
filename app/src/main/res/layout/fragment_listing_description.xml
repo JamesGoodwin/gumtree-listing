@@ -1,39 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin">
 
     <TextView
         android:id="@+id/title_text"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        style="@style/large_bold_text"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        tools:text="@string/tools_title" />
 
-    <TextView
-        android:id="@+id/location_text"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/price_text"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        <TextView
+            android:id="@+id/location_text"
+            style="@style/black_text"
+            tools:text="@string/tools_location" />
 
-    <TextView
-        android:id="@+id/date_posted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/price_text"
+            style="@style/large_grey_text"
+            android:layout_alignBaseline="@id/location_text"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            tools:text="@string/tools_price" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/date_posted_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/date_posted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/date_posted_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_posted" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/description_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/tools_description" />
 
     <TextView
         android:id="@+id/ad_ref_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:text="@string/tools_adref" />
 
 </LinearLayout>
